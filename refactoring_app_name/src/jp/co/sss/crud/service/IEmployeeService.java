@@ -30,15 +30,15 @@ public interface IEmployeeService {
 		case MENU_SEARCH_DEPT_ID:
 			newInstance = new EmployeeFindByDeptIdService();
 			break;
-		/*		case MENU_INSERT:
-					newInstance = new EmployeeRegisterService();
-					break;
-				case MENU_UPDATE:
-					newInstance = new EmployeeUpdateService();
-					break;
-				case MENU_DELETE:
-					newInstance = new EmployeeDeleteService();
-					break;*/
+		case MENU_INSERT:
+			newInstance = new EmployeeRegisterService();
+			break;
+		case MENU_UPDATE:
+			newInstance = new EmployeeUpdateService();
+			break;
+		/*				case MENU_DELETE:
+							newInstance = new EmployeeDeleteService();
+							break;*/
 
 		}
 		return newInstance;

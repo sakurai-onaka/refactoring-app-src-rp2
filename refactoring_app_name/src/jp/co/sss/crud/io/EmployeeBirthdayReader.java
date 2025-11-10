@@ -1,21 +1,23 @@
 package jp.co.sss.crud.io;
 
 import static jp.co.sss.crud.util.ConstantMsg.*;
-import static jp.co.sss.crud.util.ConstantValue.*;
 
-public class EmployeeNameReader implements IConsoleReader{
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class EmployeeBirthdayReader implements IConsoleReader {
 	/**
 	 * エラーメッセージを返すメソッド
 	 * 
 	 * @return 入力条件のエラーメッセージ
-	 * ex "1文字以上30文字以下の文字列を入力してください："
+	 * ex "正しい形式(西暦年/月/日)で日付を入力してください："
 	 */
 	@Override
 	public String getErrorMsg() {
-		String errorMsg = MSG_EMP_NAME_ERROR;
+		String errorMsg = MSG_EMP_BIRTHDAY_ERROR;
 		return errorMsg;
 	}
-	
+
 	/**
 	 * 入力文字列のバリデーションメソッド
 	 * 
@@ -25,12 +27,14 @@ public class EmployeeNameReader implements IConsoleReader{
 	@Override
 	public boolean isValid(String inputString) {
 		//判定するパターンを生成
-		if(inputString.length() >= INPUT_NAME_LENGTH_MIN && INPUT_NAME_LENGTH_MAX >= inputString.length()) {
-			if(!inputString.isBlank()) {
-				return true;
-			}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		try {
+			sdf.setLenient(false);
+			sdf.parse(inputString);
+		} catch (ParseException e) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	/**

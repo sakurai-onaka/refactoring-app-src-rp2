@@ -1,18 +1,20 @@
 package jp.co.sss.crud.io;
 
 import static jp.co.sss.crud.util.ConstantMsg.*;
-import static jp.co.sss.crud.util.ConstantValue.*;
 
-public class EmployeeNameReader implements IConsoleReader{
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EmployeeGenderReader implements IConsoleReader{
 	/**
 	 * エラーメッセージを返すメソッド
 	 * 
 	 * @return 入力条件のエラーメッセージ
-	 * ex "1文字以上30文字以下の文字列を入力してください："
+	 * ex "test："
 	 */
 	@Override
 	public String getErrorMsg() {
-		String errorMsg = MSG_EMP_NAME_ERROR;
+		String errorMsg = MSG_GENDER_ERROR;
 		return errorMsg;
 	}
 	
@@ -25,12 +27,9 @@ public class EmployeeNameReader implements IConsoleReader{
 	@Override
 	public boolean isValid(String inputString) {
 		//判定するパターンを生成
-		if(inputString.length() >= INPUT_NAME_LENGTH_MIN && INPUT_NAME_LENGTH_MAX >= inputString.length()) {
-			if(!inputString.isBlank()) {
-				return true;
-			}
-		}
-		return false;
+		Pattern p = Pattern.compile("^[0129０１２９]{1}$");
+		Matcher m = p.matcher(inputString);
+		return m.find();
 	}
 
 	/**
@@ -40,6 +39,6 @@ public class EmployeeNameReader implements IConsoleReader{
 	 */
 	@Override
 	public boolean isParseInt() {
-		return false;
+		return true;
 	}
 }
