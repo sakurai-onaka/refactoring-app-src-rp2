@@ -290,6 +290,30 @@ public class EmployeeDAO implements IEmployeeDAO {
 	 * @throws SystemErrorException : {@code ClassNotFoundException | SQLException }をキャッチしてスローする
 	 */
 	public Integer delete(Integer empId) throws SystemErrorException {
-		return null;
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		Integer deleteCount = null;
+		try {
+			// DBに接続
+			try {
+				connection = DBManager.getConnection();
+
+				// ステートメントを作成
+				preparedStatement = connection.prepareStatement(ConstantSQL.SQL_DELETE);
+
+				// 入力値をバインド
+				preparedStatement.setInt(1, empId);
+
+				// SQL文を実行
+				deleteCount = preparedStatement.executeUpdate();
+
+			} finally {
+				DBManager.close(preparedStatement);
+				DBManager.close(connection);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return deleteCount;
 	}
 }

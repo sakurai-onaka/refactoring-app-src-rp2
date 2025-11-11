@@ -1,6 +1,6 @@
 package jp.co.sss.crud.util;
 /**
- * エラーメッセージをまとめたクラス
+ * メッセージをまとめたクラス
  *
  * @author 櫻井宝生
  *
