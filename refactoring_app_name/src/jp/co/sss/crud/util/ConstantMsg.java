@@ -7,23 +7,23 @@ package jp.co.sss.crud.util;
  *
  */
 public class ConstantMsg {
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面タイトル用メッセージ
 	public static final String MSG_MENU_TITLE = "=== 社員管理システム ===";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面全件表示用メッセージ
 	public static final String MSG_MENU_ALL_FIND = "1.全件表示";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面社員名検索用メッセージ
 	public static final String MSG_MENU_FIND_BY_EMP_NAME = "2.社員名検索";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面部署ID検索用メッセージ
 	public static final String MSG_MENU_FIND_BY_DEPT_ID = "3.部署ID検索";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面新規登録用メッセージ
 	public static final String MSG_MENU_REGIST = "4.新規登録";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面更新用メッセージ
 	public static final String MSG_MENU_UPDATE = "5.更新";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面削除用メッセージ
 	public static final String MSG_MENU_DELETE = "6.削除";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面終了用メッセージ
 	public static final String MSG_MENU_END = "7.終了";
-	//社員一覧ヘッダー用メッセージ
+	//メニュー画面入力要求用メッセージ
 	public static final String MSG_MENU_INPUT_REQUEST = "メニュー番号を入力してください：";
 	//社員一覧ヘッダー用メッセージ
 	public static final String MSG_TABLE_HEADER = "社員ID\t社員名\t性別\t生年月日\t部署名";
@@ -66,7 +66,7 @@ public class ConstantMsg {
 	//システム終了メッセージ
 	public static final String MSG_VIEW_END = "システムを終了します。";
 
-	public static final String MSG_SYSTEM_ERROR = "";
+	public static final String MSG_SYSTEM_ERROR = "システムエラーです。";
 	//メニュー画面用エラーメッセージ
 	public static final String MSG_MENU_ERROR = "1以上7以下の整数を入力してください：";
 	//部署ID用エラーメッセージ
