@@ -5,6 +5,11 @@ import static jp.co.sss.crud.util.ConstantMsg.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+/**
+ * 生年月日入力クラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeBirthdayReader implements IConsoleReader {
 	/**
 	 * エラーメッセージを返すメソッド

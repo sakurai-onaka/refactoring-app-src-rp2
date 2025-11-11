@@ -7,7 +7,11 @@ import jp.co.sss.crud.exception.SystemErrorException;
 import jp.co.sss.crud.io.ConsoleWriter;
 import jp.co.sss.crud.io.EmployeeEmpIdReader;
 import jp.co.sss.crud.io.IConsoleReader;
-
+/**
+ * 従業員削除用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeDeleteService  implements IEmployeeService {
 	/**
 	 * 社員削除処理

@@ -7,7 +7,11 @@ import jp.co.sss.crud.dto.Employee;
 import jp.co.sss.crud.exception.IllegalInputException;
 import jp.co.sss.crud.exception.SystemErrorException;
 import jp.co.sss.crud.io.ConsoleWriter;
-
+/**
+ * 従業員全件出力用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeAllFindService implements IEmployeeService {
 	/**
 	 * 全件出力処理

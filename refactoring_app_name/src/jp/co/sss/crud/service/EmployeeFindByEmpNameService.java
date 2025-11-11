@@ -9,7 +9,11 @@ import jp.co.sss.crud.exception.SystemErrorException;
 import jp.co.sss.crud.io.ConsoleWriter;
 import jp.co.sss.crud.io.EmployeeNameReader;
 import jp.co.sss.crud.io.IConsoleReader;
-
+/**
+ * 従業員名検索出力用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeFindByEmpNameService implements IEmployeeService {
 	/**
 	 * 社員名検索処理

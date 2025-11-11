@@ -12,7 +12,11 @@ import jp.co.sss.crud.io.EmployeeDeptIdReader;
 import jp.co.sss.crud.io.EmployeeGenderReader;
 import jp.co.sss.crud.io.EmployeeNameReader;
 import jp.co.sss.crud.io.IConsoleReader;
-
+/**
+ * 従業員登録出力用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeRegisterService  implements IEmployeeService {
 	/**
 	 * 登録処理

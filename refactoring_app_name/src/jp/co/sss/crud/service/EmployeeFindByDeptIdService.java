@@ -9,7 +9,11 @@ import jp.co.sss.crud.exception.SystemErrorException;
 import jp.co.sss.crud.io.ConsoleWriter;
 import jp.co.sss.crud.io.EmployeeDeptIdReader;
 import jp.co.sss.crud.io.IConsoleReader;
-
+/**
+ * 部門ID検索出力用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeFindByDeptIdService implements IEmployeeService {
 	/**
 	 * 部署ID検索処理

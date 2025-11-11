@@ -4,13 +4,17 @@ import static jp.co.sss.crud.util.ConstantMsg.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * 性別入力クラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeGenderReader implements IConsoleReader{
 	/**
 	 * エラーメッセージを返すメソッド
 	 * 
 	 * @return 入力条件のエラーメッセージ
-	 * ex "test："
+	 * ex "不正な入力値です。再度入力してください："
 	 */
 	@Override
 	public String getErrorMsg() {

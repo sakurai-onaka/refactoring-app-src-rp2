@@ -2,7 +2,11 @@ package jp.co.sss.crud.io;
 
 import static jp.co.sss.crud.util.ConstantMsg.*;
 import static jp.co.sss.crud.util.ConstantValue.*;
-
+/**
+ * 従業員名入力クラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeNameReader implements IConsoleReader{
 	/**
 	 * エラーメッセージを返すメソッド

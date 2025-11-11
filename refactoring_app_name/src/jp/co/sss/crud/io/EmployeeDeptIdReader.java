@@ -5,6 +5,11 @@ import static jp.co.sss.crud.util.ConstantMsg.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 部門ID入力クラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeDeptIdReader implements IConsoleReader {
 	/**
 	 * エラーメッセージを返すメソッド

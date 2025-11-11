@@ -4,13 +4,17 @@ import static jp.co.sss.crud.util.ConstantMsg.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * 従業員ID入力クラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeEmpIdReader implements IConsoleReader{
 	/**
 	 * エラーメッセージを返すメソッド
 	 * 
 	 * @return 入力条件のエラーメッセージ
-	 * ex "test："
+	 * ex "1以上9999以下の整数を入力してください："
 	 */
 	@Override
 	public String getErrorMsg() {

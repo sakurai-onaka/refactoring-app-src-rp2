@@ -13,7 +13,11 @@ import jp.co.sss.crud.io.EmployeeEmpIdReader;
 import jp.co.sss.crud.io.EmployeeGenderReader;
 import jp.co.sss.crud.io.EmployeeNameReader;
 import jp.co.sss.crud.io.IConsoleReader;
-
+/**
+ * 従業員更新用サービスクラス
+ *
+ * @author 櫻井宝生
+ */
 public class EmployeeUpdateService implements IEmployeeService {
 	/**
 	 * 更新処理
