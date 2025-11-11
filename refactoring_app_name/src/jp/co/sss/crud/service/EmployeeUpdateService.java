@@ -6,6 +6,7 @@ import jp.co.sss.crud.dto.Department;
 import jp.co.sss.crud.dto.Employee;
 import jp.co.sss.crud.exception.IllegalInputException;
 import jp.co.sss.crud.exception.SystemErrorException;
+import jp.co.sss.crud.io.ConsoleWriter;
 import jp.co.sss.crud.io.EmployeeBirthdayReader;
 import jp.co.sss.crud.io.EmployeeDeptIdReader;
 import jp.co.sss.crud.io.EmployeeEmpIdReader;
@@ -22,30 +23,31 @@ public class EmployeeUpdateService implements IEmployeeService {
 	public void execute() throws SystemErrorException, IllegalInputException {
 		//登録入力処理
 		Employee employee = new Employee();
-		//社員名コンソール入力
+		//社員IDコンソール入力
 		IConsoleReader employeeEmpIdReader = new EmployeeEmpIdReader();
-		System.out.print("更新する社員の社員IDを入力してください:");
+		ConsoleWriter.reqInputUpdateEmpId();
 		employee.setEmpId((Integer) employeeEmpIdReader.input());
 		//社員名コンソール入力
 		IConsoleReader employeeNameReader = new EmployeeNameReader();
-		System.out.print("社員名:");
+		ConsoleWriter.reqInputEmpName();
 		employee.setEmpName((String) employeeNameReader.input());
 		//性別コンソール入力
 		IConsoleReader employeeGenderReader = new EmployeeGenderReader();
-		System.out.print("性別(1: 男性, 2: 女性):");
+		ConsoleWriter.reqInputGender();
 		employee.setGender((Integer) employeeGenderReader.input());
 		//生年月日コンソール入力
 		IConsoleReader employeeBirthdayReader = new EmployeeBirthdayReader();
-		System.out.print("生年月日（西暦年/月/日）:");
+		ConsoleWriter.reqBirthday();
 		employee.setBirthday((String) employeeBirthdayReader.input());
 		//部署IDコンソール入力
 		IConsoleReader employeeDeptIdReader = new EmployeeDeptIdReader();
-		System.out.print("部署ID(1：営業部、2：経理部、3：総務部):");
+		ConsoleWriter.reqDeptId(false);
 		employee.setDepartment(new Department());
 		employee.getDepartment().setDeptId((Integer) employeeDeptIdReader.input());
 		// 更新処理
 		IEmployeeDAO employeeDAO = new EmployeeDAO();
-		employeeDAO.update(employee);
-		System.out.println("");
+		Integer updateCount = employeeDAO.update(employee);
+		ConsoleWriter.viewUpdateMag(updateCount);
+		ConsoleWriter.viewNewLine();
 	}
 }

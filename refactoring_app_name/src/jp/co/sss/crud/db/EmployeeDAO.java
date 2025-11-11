@@ -46,7 +46,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 
 				//resultSetの結果Setがない場合はfalse
 				if (!resultSet.isBeforeFirst()) {
-					System.out.println("該当者はいませんでした");
 					return null;
 				}
 
@@ -108,7 +107,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 
 				//resultSetの結果Setがない場合はfalse
 				if (!resultSet.isBeforeFirst()) {
-					System.out.println("該当者はいませんでした");
 					return null;
 				}
 
@@ -170,7 +168,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 
 				//resultSetの結果Setがない場合はfalse
 				if (!resultSet.isBeforeFirst()) {
-					System.out.println("該当者はいませんでした");
 					return null;
 				}
 
@@ -228,8 +225,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 				// SQL文を実行
 				preparedStatement.executeUpdate();
 
-				// 登録完了メッセージを出力
-				System.out.println("社員情報を登録しました");
 			} finally {
 				DBManager.close(preparedStatement);
 				DBManager.close(connection);
@@ -268,9 +263,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 
 				// SQL文を実行
 				updateCount = preparedStatement.executeUpdate();
-
-				// 登録完了メッセージを出力
-				System.out.println("社員情報を更新しました");
 
 			} finally {
 				DBManager.close(preparedStatement);
