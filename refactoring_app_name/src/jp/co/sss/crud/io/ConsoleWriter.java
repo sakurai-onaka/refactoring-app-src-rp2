@@ -37,25 +37,7 @@ public class ConsoleWriter {
 	public static void viewEmpTable(List<Employee> employees) {
 		System.out.println(ConstantMsg.MSG_TABLE_HEADER);
 		for (Employee employee : employees) {
-			System.out.print(employee.getEmpId() + ConstantMsg.MSG_TABLE_TAB);
-			System.out.print(employee.getEmpName() + ConstantMsg.MSG_TABLE_TAB);
-
-			int gender = employee.getGender();
-			if (gender == 0) {
-				System.out.print(ConstantMsg.MSG_TABLE_GENDER_NO_ANSER + ConstantMsg.MSG_TABLE_TAB);
-			} else if (gender == 1) {
-				System.out.print(ConstantMsg.MSG_TABLE_GENDER_MEN + ConstantMsg.MSG_TABLE_TAB);
-
-			} else if (gender == 2) {
-				System.out.print(ConstantMsg.MSG_TABLE_GENDER_WOMEN + ConstantMsg.MSG_TABLE_TAB);
-
-			} else if (gender == 9) {
-				System.out.print(ConstantMsg.MSG_TABLE_GENDER_ANOTHER + ConstantMsg.MSG_TABLE_TAB);
-
-			}
-
-			System.out.print(employee.getBirthday() + ConstantMsg.MSG_TABLE_TAB);
-			System.out.println(employee.getDepartment().getDeptName());
+			System.out.println(employee);
 		}
 	}
 
@@ -84,7 +66,7 @@ public class ConsoleWriter {
 	 * 「社員名:」出力
 	 */
 	public static void reqInputEmpName() {
-		System.out.println(ConstantMsg.MSG_REQUEST_EMP_NAME);
+		System.out.print(ConstantMsg.MSG_REQUEST_EMP_NAME);
 	}
 
 	/**
