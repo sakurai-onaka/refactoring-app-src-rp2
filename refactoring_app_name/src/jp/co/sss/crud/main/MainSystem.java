@@ -38,14 +38,19 @@ public class MainSystem {
 			MenuNoReader menuNoReader = new MenuNoReader();
 			try {
 				inputMenuNum = (Integer) menuNoReader.input();
-				// 機能の呼出
+				// コンソール入力に従って該当のインスタンスを生成する
 				IEmployeeService iEmployeeService = IEmployeeService.getInstanceByMenuNo(inputMenuNum);
 				if (iEmployeeService != null) {
 					iEmployeeService.execute();
 				}
-			} catch (IllegalInputException | SystemErrorException e) {
-				// TODO 自動生成された catch ブロック
+			} catch (IllegalInputException e) {
+				System.out.println(e.getMessage());
+				System.out.println();
+				continue;
+			} catch (SystemErrorException e) {//継続不能なエラーの場合、ループを抜ける
+				System.out.println(e.getMessage());
 				e.printStackTrace();
+				break;
 			}
 		} while (inputMenuNum != ConstantValue.MENU_END);
 		ConsoleWriter.viewEnd();

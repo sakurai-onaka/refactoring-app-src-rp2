@@ -13,6 +13,7 @@ import java.util.List;
 import jp.co.sss.crud.dto.Department;
 import jp.co.sss.crud.dto.Employee;
 import jp.co.sss.crud.exception.SystemErrorException;
+import jp.co.sss.crud.util.ConstantMsg;
 import jp.co.sss.crud.util.ConstantSQL;
 
 /**
@@ -69,7 +70,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				DBManager.close(connection);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			return null;
+			throw new SystemErrorException(ConstantMsg.MSG_SYSTEM_ERROR, e);
 		}
 		return employees;
 	}
@@ -130,7 +131,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				DBManager.close(connection);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			return null;
+			throw new SystemErrorException(ConstantMsg.MSG_SYSTEM_ERROR, e);
 		}
 		return employees;
 	}
@@ -230,7 +231,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				DBManager.close(connection);
 			}
 		} catch (ClassNotFoundException | SQLException | ParseException e) {
-			e.printStackTrace();
+			throw new SystemErrorException(ConstantMsg.MSG_SYSTEM_ERROR, e);
 		}
 	}
 
@@ -269,7 +270,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				DBManager.close(connection);
 			}
 		} catch (ClassNotFoundException | SQLException | ParseException e) {
-			e.printStackTrace();
+			throw new SystemErrorException(ConstantMsg.MSG_SYSTEM_ERROR, e);
 		}
 		return updateCount;
 	}
@@ -304,7 +305,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				DBManager.close(connection);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			throw new SystemErrorException(ConstantMsg.MSG_SYSTEM_ERROR, e);
 		}
 		return deleteCount;
 	}

@@ -1,7 +1,5 @@
 package jp.co.sss.crud.exception;
 
-import java.io.IOException;
-
 /**
  * 独自例外[ClassNotFoundException | SQLException]時に実行クラス
  *
@@ -12,7 +10,7 @@ public class SystemErrorException extends Exception{
 	/**
 	 * エラーメッセージを受け取るコンストラクタ
 	 */
-	public SystemErrorException(String msg,IOException e) {
+	public SystemErrorException(String msg,Exception e) {
 		super(msg);
 	}
 }
